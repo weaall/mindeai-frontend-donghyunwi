@@ -87,9 +87,9 @@ mindeai-frontend-donghyunwi/
 ## 기능구현
 
 ### web
-<img src="public/readme/web1.png" alt="Web1" width="400" />
-<img src="public/readme/web2.png" alt="Web2" width="400" />
+<img src="public/readme/web1.png" alt="Web1" width="500" />
+<img src="public/readme/web2.png" alt="Web2" width="500" />
 
 ### mobile
-<img src="public/readme/mobile1.png" alt="Mobile1" width="400" />
-<img src="public/readme/mobile2.png" alt="Mobile2" width="400" />
+<img src="public/readme/mobile1.png" alt="Mobile1" width="500" />
+<img src="public/readme/mobile2.png" alt="Mobile2" width="500" />
