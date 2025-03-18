@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 마인즈에이아이 프론트엔드 과제 테스트
 
-## Getting Started
 
-First, run the development server:
+To-Do 리스트 페이지 구현
+
+## 목차
+
+- [기술스텍](#기술스텍)
+- [install](#install)
+- [run](#run)
+- [구조](#구조)
+- [기능](#기능)
+- [기능구현](#기능구현)
+
+## 기술스텍
+
+- 프레임워크: Next.js <br/>
+- 언어: TypeScript <br/>
+- CSS: SCSS,Styled Components <br/>
+- UI: React Datepicker <br/>
+- 유틸리티: Day.js <br/>
+
+## isntall
+
+```bash
+npm install
+```
+
+## run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 구조
+```
+mindeai-frontend-donghyunwi/
+├── public/                             # 정적 파일
+│   └── assets/
+├── src/
+│   └── app/                  
+│       ├── favicon.ico
+│       ├── globals.css
+│       ├── layout.tsx
+│       ├── components/           
+│       │   ├── common/                 # 재사용 가능한 UI 컴포넌트
+│       │   │   ├── date-picker/
+│       │   │   └── floating-button/
+│       │   └── modals/
+│       │       ├── common/             # 재사용 가능한 modal
+│       │       │   └── confrim-modal/
+│       │       └── todo-list-modal
+│       │           ├── add-task-modal/
+│       │           └── edit-task-modal/
+│       │   
+│       └── (main)
+│           ├── components/             # main page components
+│           |   ├── sorted-list/            
+│           |   ├── today-stasts/
+│           |   ├── TodoList.styles.tsx
+│           |   └── TodoList.tsx
+│           └── page.tsx                # main page
+├── next.config.js                     
+├── tsconfig.json                      
+└── package.json         
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 기능
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **✅ 외부 API에서 초기 To-Do 리스트 데이터를 가져오는 기능**
+- **✅ 할 일을 추가하는 기능**
+- **✅ 할 일을 완료 처리하는 기능**
+- **✅ 할 일을 삭제하는 기능**
+- **✅ 로컬 스토리지를 사용하여 데이터를 저장하고 앱이 다시 로드될 때 데이터를 불러오는 기능**
+<br/><br/>
+- **➕ 할 일의 일정 설정하는 기능**
+- **➕ 할 일의 일정과 할 일을 수정하는 기능**
 
-## Learn More
+## 기능구현
 
-To learn more about Next.js, take a look at the following resources:
+- **할 일 추가**: 플로팅 버튼을 누르고 모달에서 새로운 할 일과 일정을 추가한 후 확인 버튼을 클릭합니다.
+- **할 일 완료**: 할 일 목록에서 해당 할 일의 체크박스를 클릭합니다.
+- **할 일 삭제**: 할 일 목록에서 할 일을 클릭한 후 삭제 버튼을 클릭하고, 모달에서 확인 버튼을 클릭합니다.
+<br/><br/>
+- **➕ 할 일 수정**: 할 일 목록에서 할 일을 클릭한 후 수정 버튼을 클릭하고, 모달에서 할 일과 일정을 수정한 후 확인 버튼을 클릭합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 기능구현
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### web
+<img src="public/readme/web1.png" alt="Web1" width="400" />
+<img src="public/readme/web2.png" alt="Web2" width="400" />
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### mobile
+<img src="public/readme/mobile1.png" alt="Mobile1" width="400" />
+<img src="public/readme/mobile2.png" alt="Mobile2" width="400" />

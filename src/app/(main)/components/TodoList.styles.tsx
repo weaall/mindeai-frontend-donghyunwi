@@ -71,6 +71,7 @@ export const BtnContainer = styled.div`
         margin: 0 5%;
     }
 `;
+
 export const BtnWrap = styled.div`
     width: 100%;
     height: 2rem;
@@ -85,14 +86,14 @@ export const BtnWrap = styled.div`
 export const Btn = styled.button<{ checked: boolean }>`
     font-family: 'Montserrat', sans-serif;
     font-size: 0.7rem;
-    font-weight: 550;
+    font-weight: 500;
     width: calc(33% - 0.1rem);
     height: 1.7rem;
     border-radius: 0.5rem;
     border: none;
     color: black;
     background: ${({ checked }) => 
-        checked ? "linear-gradient(135deg, #0070f3, rgb(142, 187, 255))" : "transparent"};
+        checked ? "var(--main-color)" : "transparent"};
     cursor: pointer;
     transition: background 0.5s ease, color 0.5s ease;
     color: ${({ checked }) => 
@@ -106,38 +107,4 @@ export const TodoList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 8px;
-`;
-
-export const FloatingBtn = styled.button`
-    position: fixed;
-    bottom: 2rem;
-    right: calc(50% - 15rem + 1rem);
-    width: 3.5rem;
-    height: 3.5rem;
-    background-color: #0070f3;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    z-index: 2;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-        background-color: #005bb5;
-    }
-
-    @media (max-width: 640px) {
-        right: 1.5rem;
-        bottom: 1.5rem;
-    }
-`;
-
-export const FloatingSvg = styled.img`
-    height: 2rem;
-    width: 2rem;
 `;

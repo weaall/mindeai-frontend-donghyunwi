@@ -52,7 +52,6 @@ export const ModalContent = styled.div`
 export const Title = styled.h3`
     padding: 0 0 1rem 0;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
 `;
 
 export const Input = styled.input`
@@ -109,9 +108,9 @@ export const CancelBtn = styled.button`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     background-color: #f4f5f6;
     color: black;
     border: 1px solid #f4f5f6;
@@ -133,22 +132,22 @@ export const ConfirmBtn = styled.button`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     border: none;
-    background: var(--main-color);
+    background-color: var(--main-color-btn);
     color: white;
     cursor: pointer;
 
     &:hover {
-        background: var(--main-color-hover);
+        background-color: var(--main-color-btn-hover);
         border: none;
     }
 
     @media (max-width: 640px) {
         &:hover {
-            background: var(--main-color);
+            background-color: var(--main-color-btn);
         }
     }
 `;

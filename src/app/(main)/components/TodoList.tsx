@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
@@ -8,7 +8,8 @@ import TodayTodos from "./sorted-list/TodayTodos";
 import PastTodos from "./sorted-list/PastTodos";
 import TodayStats from "./today-stasts/TodayStats";
 
-import AddTaskModal from "./add-task-modal/AddTask.modal";
+import AddTaskModal from "../../components/modals/todo-list-modal/add-task-modal/AddTask.modal";
+import FloatingButton from "../../components/common/floating-button/FloatingButton";
 
 import * as s from "./TodoList.styles";
 
@@ -163,9 +164,12 @@ export default function TodoList() {
                 )}
             </s.TodoList>
 
-            <s.FloatingBtn onClick={() => setIsModalOpen(true)}>
-                <s.FloatingSvg alt="" src={"../../../assets/svg/plus.svg"} />
-            </s.FloatingBtn>
+            <FloatingButton
+                onClick={() => setIsModalOpen(true)}
+                svgSrc={"../../../assets/svg/plus.svg"}
+                color="var(--main-color-btn)"
+                colorHover="var(--main-color-btn-hover)"
+            />
 
             {isModalOpen && (
                 <AddTaskModal

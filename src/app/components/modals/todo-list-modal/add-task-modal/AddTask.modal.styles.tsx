@@ -49,12 +49,53 @@ export const ModalContent = styled.div`
     }
 `;
 
-export const Title = styled.p`
+export const Title = styled.h3`
     padding: 0 0 1rem 0;
     margin: 0 auto;
-    font-size: 1rem;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 `;
+
+export const Input = styled.input`
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 0.75rem;
+    background-color: white;
+    color: black;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+`;
+
+export const TaskInput = styled.input`
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 0.75rem;
+    background-color: white;
+    color: black;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color:rgb(224, 224, 224);
+        font-size: 0.9rem;
+        font-weight: 100;
+    }
+`;
+
+export const TaskLength = styled.p`
+    font-size: 0.7rem;
+    color: gray;
+    margin-left: auto;
+    padding: 0.2rem 0.5rem 1rem 0;
+`
 
 export const BtnWrap = styled.div`
     width: 100%;
@@ -68,7 +109,7 @@ export const CancelBtn = styled.button`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.75rem 1.25rem;
     border-radius: 0.75rem;
     background-color: #f4f5f6;
@@ -77,7 +118,7 @@ export const CancelBtn = styled.button`
     cursor: pointer;
 
     &:hover {
-        background-color: #eeeeee;
+        background-color:#eeeeee;
     }
 
     @media (max-width: 640px) {
@@ -92,22 +133,22 @@ export const ConfirmBtn = styled.button`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.75rem 1.25rem;
     border-radius: 0.75rem;
     border: none;
-    background: var(--main-color);
+    background-color: var(--main-color-btn);
     color: white;
     cursor: pointer;
 
     &:hover {
-        background: var(--main-color-hover);
+        background-color: var(--main-color-btn-hover);
         border: none;
     }
 
     @media (max-width: 640px) {
         &:hover {
-            background: var(--main-color);
+            background-color: var(--main-color-btn);
         }
     }
 `;

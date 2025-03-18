@@ -3,7 +3,22 @@
     border-radius: 12px;
     font-family: 'Montserrat', sans-serif;
     height: 25rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+.react-datepicker__month-container {
+    padding: 0;
+    margin: 0;
+}
+
+.react-datepicker__month{
+    margin: 0;
+}
+
+
+
 
 .react-datepicker__header {
     background-color: white;
@@ -22,6 +37,8 @@
 
 .react-datepicker__current-month {
     font-weight: bold;
+    padding: 0;
+    margin: 0;
     padding-bottom: 1rem;
 }
 
@@ -41,7 +58,6 @@
 .react-datepicker__day-names {
     display: flex;
     justify-content: space-evenly;
-    color: #0070f3;
     font-weight: bold;
 }
 
@@ -55,12 +71,12 @@
     height: 2.5rem;
     margin: 3px;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .react-datepicker__day--selected:hover,
 .react-datepicker__day--keyboard-selected:hover {
-    background-color: #0070f3;
+    background-color: var(--main-color-btn);
     color: white;
     transform: scale(1.15);
     border: none;
@@ -68,7 +84,7 @@
 }
 
 .react-datepicker__day--selected:not([aria-disabled=true]):hover {
-    background-color: #0070f3;
+    background-color: var(--main-color-btn);
     color: white;
     transform: scale(1.15);
     border: none;
@@ -76,7 +92,7 @@
 }
 
 .react-datepicker__day:not([aria-disabled=true]):hover {
-    background-color: #0070f3;
+    background-color: var(--main-color-btn);
     color: white;
     transform: scale(1.15);
     border: none;
@@ -85,19 +101,19 @@
 
 .react-datepicker__day--today {
     font-weight: bold;
-    border: 1px solid #0070f3;
-    color: #0070f3;
-    background-color: #e3f2fd;
+    border: 1px solid var(--main-color-btn);
+    color: var(--main-color-btn);
+    background-color: #22222215;
     border: none;
     border-radius: 50%;
 }
 
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected[aria-selected=true] {
-    background-color: #0070f3;
+    background-color: var(--main-color-btn);
     color: white;
     transform: scale(1.1);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     border: none;
     border-radius: 50%;
     font-weight: bold;
@@ -108,10 +124,10 @@
 }
 
 .react-datepicker__day:hover {
-    background-color: #0070f3;
-    background: #0070f3;
+    background-color: var(--main-color-btn);
+    background: var(--main-color-btn);
     transform: scale(1.1);
-    color: #0070f3;
+    color: var(--main-color-btn);
     font-weight: bold;
     border: none;
     border-radius: 50%;

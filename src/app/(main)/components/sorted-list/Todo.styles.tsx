@@ -21,9 +21,10 @@ export const NoTodosMessage = styled.div`
     height: 12rem;
     justify-content: center;
     align-items: center;
+    color:gray;
 `
 
-export const TodoWrap = styled.li<{ completed: boolean; expanded: boolean }>`
+export const TodoWrap = styled.li<{ completed: string; expanded: string }>`
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,9 +32,9 @@ export const TodoWrap = styled.li<{ completed: boolean; expanded: boolean }>`
     padding: 0 1rem 1rem 1rem;
     background: white;
     transition: height 0.5s ease, border 0.5s ease;
-    height: ${({ expanded }) => (expanded ? "9rem" : "4rem")};
+    height: ${({ expanded }) => (expanded === "true"? "10rem" : "4rem")};
     overflow: hidden;
-    border: ${({ completed }) => (completed ? "2px solid #0070f3;" : "2px solid transparent")};
+    border: ${({ completed }) => (completed === "true" ? "2px solid var(--main-color-btn)" : "2px solid transparent")};
     border-radius: 28px;
     gap: 0.5rem;
     cursor: pointer;
@@ -41,7 +42,7 @@ export const TodoWrap = styled.li<{ completed: boolean; expanded: boolean }>`
     color: black;
 
     @media (max-width: 640px) {
-        height: ${({ expanded }) => (expanded ? "10rem" : "4rem")};
+        height: ${({ expanded }) => (expanded === "true" ? "11rem" : "4rem")};
     }
 `;
 
@@ -58,18 +59,18 @@ export const ToggleBtnWrap = styled.div`
     align-items: center;
 `;
 
-export const ToggleBtn = styled.button<{ completed: boolean }>`
+export const ToggleBtn = styled.button<{ completed: string }>`
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    border: 2px solid ${({ completed }) => (completed ? "#0070f3" : "#ddd")};
-    background-color: ${({ completed }) => (completed ? "#0070f3" : "transparent")};
+    border: 2px solid ${({ completed }) => (completed === "true" ? "var(--main-color-btn)" : "#ddd")};
+    background-color: ${({ completed }) => (completed === "true" ? "var(--main-color-btn)" : "transparent")};
     cursor: pointer;
     margin-right: 10px;
     flex-shrink: 0;
 
     &:hover {
-        border-color: #0070f3;
+        border-color: var(--main-color-btn);
     }
 
     @media (max-width: 640px) {
@@ -88,13 +89,13 @@ export const InnerWrap = styled.div`
     gap: 0.3rem;
 `;
 
-export const TodoTitle = styled.span<{ expanded: boolean }>`
+export const TodoTitle = styled.span<{ expanded: string }>`
     max-width: 19rem;
     font-size: 0.9rem;
     font-weight: 500;
     flex: 1;
     overflow: hidden;
-    white-space: ${({ expanded }) => (expanded ? "normal" : "nowrap")};
+    white-space: ${({ expanded }) => (expanded === "true" ? "normal" : "nowrap")};
     text-overflow: ellipsis;
     transition: white-space 0.3s ease;
 
@@ -116,19 +117,19 @@ export const MoreBtnWrap = styled.div`
     align-items: center;
 `;
 
-export const MoreBtnSvg = styled.img<{ expanded: boolean }>`
+export const MoreBtnSvg = styled.img<{ expanded: string }>`
     height: 1.5rem;
     width: 1.5rem;
     transition: transform 0.3s ease; /* Smooth transition for rotation */
-    transform: ${({ expanded }) => (expanded ? "rotate(180deg)" : "rotate(0deg)")};
+    transform: ${({ expanded }) => (expanded === "true" ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 
-export const ExtraWrap = styled.div<{ expanded: boolean }>`
+export const ExtraWrap = styled.div<{ expanded: string }>`
     display: flex;
     justify-content: flex-end;
-    opacity: ${({ expanded }) => (expanded ? 1 : 0)};
+    opacity: ${({ expanded }) => (expanded === "true" ? 1 : 0)};
     transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
-    max-height: ${({ expanded }) => (expanded ? "100px" : "0")};
+    max-height: ${({ expanded }) => (expanded === "true" ? "100px" : "0")};
     overflow: hidden;
 
     @media (max-width: 640px) {
@@ -141,8 +142,8 @@ export const ChangeBtn = styled.button`
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1rem;
     border-radius: 0.75rem;
     background-color: #f4f5f6;
     color: black;
@@ -163,27 +164,26 @@ export const ChangeBtn = styled.button`
 `;
 
 export const RemoveBtn = styled.button`
+    width: 50%;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
     font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
+    font-weight: 500;
+    padding: 0.7rem 1rem;
     border-radius: 0.75rem;
     border: none;
-    background: var(--main-color);
+    background-color: var(--main-color-btn);
     color: white;
     cursor: pointer;
-    width: 50%;
 
     &:hover {
-        background: var(--main-color-hover);
+        background-color: var(--main-color-btn-hover);
         border: none;
     }
 
     @media (max-width: 640px) {
-        width: 50%;
         &:hover {
-            background: var(--main-color);
+            background-color: var(--main-color-btn);
         }
     }
 `;

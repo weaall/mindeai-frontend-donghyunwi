@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import EditTaskModal from "../edit-task-modal/EditTask.modal";
-import ConfirmDeleteModal from "../confirm-delete-modal/ConfirmDelete.modal";
+import EditTaskModal from "../../../components/modals/todo-list-modal/edit-task-modal/EditTask.modal";
+import ConfirmModal from "../../../components/modals/common/confirm-modal/Confirm.modal";
+
 import * as s from "./Todo.styles";
 
 interface TodayTodosProps {
@@ -50,14 +51,14 @@ export default function TodayTodos({ todos, expandedTodoId, toggleComplete, dele
                 todos.map((todo) => (
                     <s.TodoWrap
                         key={todo.id}
-                        completed={todo.completed}
-                        expanded={expandedTodoId === todo.id}
+                        completed={todo.completed.toString()}
+                        expanded={(expandedTodoId === todo.id).toString()}
                         onClick={() => toggleExpand(todo.id)}
                     >
                         <s.FlexWrap>
                             <s.ToggleBtnWrap>
                                 <s.ToggleBtn
-                                    completed={todo.completed}
+                                    completed={todo.completed.toString()}
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         toggleComplete(todo.id);
@@ -66,14 +67,14 @@ export default function TodayTodos({ todos, expandedTodoId, toggleComplete, dele
                             </s.ToggleBtnWrap>
                             <s.InnerWrap>
                                 <s.DueDate>{todo.dueDate}</s.DueDate>
-                                <s.TodoTitle expanded={expandedTodoId === todo.id}>{todo.title}</s.TodoTitle>
+                                <s.TodoTitle expanded={(expandedTodoId === todo.id).toString()}>{todo.title}</s.TodoTitle>
                             </s.InnerWrap>
                             <s.MoreBtnWrap>
-                                <s.MoreBtnSvg alt="" src={"../../../assets/svg/arrow_down.svg"} expanded={expandedTodoId === todo.id} />
+                                <s.MoreBtnSvg alt="" src={"../../../assets/svg/arrow_down.svg"} expanded={(expandedTodoId === todo.id).toString()} />
                             </s.MoreBtnWrap>
                         </s.FlexWrap>
 
-                        <s.ExtraWrap expanded={expandedTodoId === todo.id}>
+                        <s.ExtraWrap expanded={(expandedTodoId === todo.id).toString()}>
                             {expandedTodoId === todo.id && (
                                 <>
                                     <s.ChangeBtn
@@ -111,8 +112,8 @@ export default function TodayTodos({ todos, expandedTodoId, toggleComplete, dele
             )}
 
             {isDeleteModalOpen && (
-                <ConfirmDeleteModal
-                    todoTitle={currentTodo.title}
+                <ConfirmModal
+                    message="정말로 삭제 하시겠습니까?"
                     confirmDelete={handleConfirmDelete}
                     closeModal={() => setIsDeleteModalOpen(false)}
                 />

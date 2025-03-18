@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CustomDatePicker from "../../date-picker/DatePicker";
+import CustomDatePicker from "../../../common/date-picker/DatePicker";
 import * as s from "./EditTask.modal.styles";
 
 interface EditTaskModalProps {

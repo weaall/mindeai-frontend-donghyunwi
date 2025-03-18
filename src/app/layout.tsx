@@ -22,7 +22,7 @@ export default function RootLayout({
                 ></link>
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
             </head>
-            <body style={{ fontFamily: notoSansKr.style.fontFamily }}>{children}</body>
+            <body className={notoSansKr.className}>{children}</body>
         </html>
     );
 }

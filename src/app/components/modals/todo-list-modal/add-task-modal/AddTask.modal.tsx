@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
-import CustomDatePicker from "../../date-picker/DatePicker";
+import CustomDatePicker from "../../../common/date-picker/DatePicker";
 import * as s from "./AddTask.modal.styles";
 
 interface AddTaskModalProps {
