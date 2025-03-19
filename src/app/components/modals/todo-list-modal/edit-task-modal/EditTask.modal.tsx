@@ -62,7 +62,9 @@ export default function EditTaskModal({
                 <s.TaskLength>{currentTodo.length} / 40</s.TaskLength>
                 <s.BtnWrap>
                     <s.CancelBtn onClick={handleClose}>취소</s.CancelBtn>
-                    <s.ConfirmBtn onClick={handleUpdate}>수정</s.ConfirmBtn>
+                    <s.ConfirmBtn onClick={handleUpdate} disabled={!currentTodo}>
+                        수정
+                    </s.ConfirmBtn>
                 </s.BtnWrap>
             </s.ModalContent>
         </s.Modal>

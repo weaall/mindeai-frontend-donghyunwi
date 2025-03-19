@@ -144,6 +144,11 @@ export const ConfirmBtn = styled.button`
         background-color: var(--main-color-btn-hover);
         border: none;
     }
+    &:disabled {
+        background-color: rgb(240, 240, 240);
+        color: #666666;
+        cursor: default;
+    }
 
     @media (max-width: 640px) {
         &:hover {
