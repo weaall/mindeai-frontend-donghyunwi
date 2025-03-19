@@ -59,7 +59,9 @@ export default function AddTaskModal({ newTodo, setNewTodo, dueDate, setDueDate,
                 <s.TaskLength>{newTodo.length} / 40</s.TaskLength>
                 <s.BtnWrap>
                     <s.CancelBtn onClick={handleClose}>취소</s.CancelBtn>
-                    <s.ConfirmBtn onClick={addTodo}>확인</s.ConfirmBtn>
+                    <s.ConfirmBtn onClick={addTodo} disabled={!newTodo}>
+                        확인
+                    </s.ConfirmBtn>
                 </s.BtnWrap>
             </s.ModalContent>
         </s.Modal>
